@@ -1,0 +1,199 @@
+{
+	"hash": "5598e530e071397b3d742dec3940c750",
+	"updated": "2025-11-25T17:34:37.3364664+02:00",
+	"installedModules": {
+		"github.com/birbilis/object-debugger-for-firemonkey": {
+			"name": "object-debugger-for-firemonkey",
+			"version": "6.2",
+			"hash": "4104ad92ba72ea3cb9f1aa2045e69863",
+			"artifacts": {
+				"bin": [
+					"DemoDesktop.exe",
+					"DemoMobile.exe",
+					"ObjectDebuggerFMXTest.exe"
+				],
+				"dcp": [
+					"ObjectDebuggerFMX.bpi",
+					"ObjectDebuggerFMX.dcp",
+					"ObjectDebuggerFMX.lib"
+				],
+				"dcu": [
+					"FormMessage.dcu",
+					"ObjectDebuggerFMXForm.dcu",
+					"ObjectDebuggerFMXFrame.dcu",
+					"Unit1.dcu",
+					"Unit2.dcu",
+					"Unit3.dcu",
+					"Unit5.dcu"
+				],
+				"bpl": [
+					"ObjectDebuggerFMX.bpl"
+				]
+			},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/zoomicon/readcom.core.delphi": {
+			"name": "readcom.core.delphi",
+			"version": "15.0",
+			"hash": "1ae21b25218c486d4c552044937fd289",
+			"artifacts": {},
+			"failed": true,
+			"changed": false
+		},
+		"github.com/zoomicon/zoomicon.generics.delphi": {
+			"name": "zoomicon.generics.delphi",
+			"version": "3.4",
+			"hash": "17284be5f5bdc19617529d0981e01324",
+			"artifacts": {
+				"bin": [
+					"Zoomicon.Generics.Tests.exe"
+				],
+				"dcp": [
+					"Zoomicon.Generics.bpi",
+					"Zoomicon.Generics.dcp",
+					"Zoomicon.Generics.lib"
+				],
+				"dcu": [
+					"DUnitConsts.dcu",
+					"DUnitTestRunner.dcu",
+					"GUITestRunner.dcu",
+					"Test.Zoomicon.Generics.dcu",
+					"TestFramework.dcu",
+					"TextTestRunner.dcu",
+					"Zoomicon.Generics.Collections.dcu",
+					"Zoomicon.Generics.Factories.dcu",
+					"Zoomicon.Generics.Functors.dcu",
+					"Zoomicon.Generics.Registries.dcu"
+				],
+				"bpl": [
+					"Zoomicon.Generics.bpl"
+				]
+			},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/zoomicon/zoomicon.helpers.fmx.delphi": {
+			"name": "zoomicon.helpers.fmx.delphi",
+			"version": "3.3",
+			"hash": "80bab58cdd2b80a58809533167857674",
+			"artifacts": {
+				"dcp": [
+					"Zoomicon.Helpers.FMX.dcp"
+				],
+				"dcu": [
+					"Zoomicon.Helpers.FMX.ActnList.dcu",
+					"Zoomicon.Helpers.FMX.Controls.ControlHelper.dcu",
+					"Zoomicon.Helpers.FMX.Forms.ApplicationHelper.dcu",
+					"Zoomicon.Helpers.FMX.Forms.FormHelper.dcu",
+					"Zoomicon.Helpers.FMX.ImgList.ImageListHelpers.dcu",
+					"Zoomicon.Helpers.FMX.Layouts.ScaledLayoutHelpers.dcu",
+					"Zoomicon.Helpers.FMX.Layouts.ScrollBoxHelpers.dcu",
+					"Zoomicon.Helpers.FMX.Memo.MemoHelpers.dcu",
+					"Zoomicon.Helpers.FMX.TreeView.TreeViewHelpers.dcu"
+				],
+				"bpl": [
+					"Zoomicon.Helpers.FMX.bpl"
+				]
+			},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/zoomicon/zoomicon.helpers.rtl.delphi": {
+			"name": "zoomicon.helpers.rtl.delphi",
+			"version": "3.4",
+			"hash": "77000070e19faa46ea54112a79ce1524",
+			"artifacts": {
+				"dcp": [
+					"Zoomicon.Helpers.RTL.bpi",
+					"Zoomicon.Helpers.RTL.dcp",
+					"Zoomicon.Helpers.RTL.lib"
+				],
+				"dcu": [
+					"Zoomicon.Helpers.RTL.ClassListHelpers.dcu",
+					"Zoomicon.Helpers.RTL.ComponentHelpers.dcu",
+					"Zoomicon.Helpers.RTL.StreamHelpers.dcu",
+					"Zoomicon.Helpers.RTL.StringsHelpers.dcu"
+				],
+				"bpl": [
+					"Zoomicon.Helpers.RTL.bpl"
+				]
+			},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/zoomicon/zoomicon.introspection.fmx.delphi": {
+			"name": "zoomicon.introspection.fmx.delphi",
+			"version": "3.6",
+			"hash": "5819d244e61b8f9332820f56de3d3cfc",
+			"artifacts": {
+				"dcp": [
+					"Zoomicon.Introspection.FMX.bpi",
+					"Zoomicon.Introspection.FMX.dcp",
+					"Zoomicon.Introspection.FMX.lib"
+				],
+				"dcu": [
+					"Zoomicon.Introspection.FMX.Debugging.dcu",
+					"Zoomicon.Introspection.FMX.StructureView.dcu"
+				],
+				"bpl": [
+					"Zoomicon.Introspection.FMX.bpl"
+				]
+			},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/zoomicon/zoomicon.manipulation.fmx.delphi": {
+			"name": "zoomicon.manipulation.fmx.delphi",
+			"version": "3.4",
+			"hash": "c477403796f00c1d5509abacdf184933",
+			"artifacts": {
+				"dcp": [
+					"Zoomicon.Manipulation.FMX.bpi",
+					"Zoomicon.Manipulation.FMX.dcp",
+					"Zoomicon.Manipulation.FMX.lib"
+				],
+				"dcu": [
+					"Zoomicon.Manipulation.FMX.CustomManipulator.dcu",
+					"Zoomicon.Manipulation.FMX.Manipulator.dcu",
+					"Zoomicon.Manipulation.FMX.Selector.dcu"
+				],
+				"bpl": [
+					"Zoomicon.Manipulation.FMX.bpl"
+				]
+			},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/zoomicon/zoomicon.media.fmx.delphi": {
+			"name": "zoomicon.media.fmx.delphi",
+			"version": "7.4",
+			"hash": "5197f96db18c1003a41f3c071358042c",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/zoomicon/zoomicon.zui.fmx.delphi": {
+			"name": "zoomicon.zui.fmx.delphi",
+			"version": "3.2",
+			"hash": "f1411daffdaf69d2785e67a64522a1af",
+			"artifacts": {
+				"dcp": [
+					"Zoomicon.ZUI.FMX.bpi",
+					"Zoomicon.ZUI.FMX.dcp",
+					"Zoomicon.ZUI.FMX.lib"
+				],
+				"dcu": [
+					"Zoomicon.ZUI.FMX.ZoomFrame.dcu",
+					"Zoomicon.ZUI.FMX.dcu",
+					"Zoomicon.ZUI.Models.dcu"
+				],
+				"bpl": [
+					"Zoomicon.ZUI.FMX.bpl"
+				]
+			},
+			"failed": false,
+			"changed": false
+		}
+	}
+}

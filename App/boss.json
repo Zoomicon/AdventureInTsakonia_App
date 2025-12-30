@@ -1,0 +1,13 @@
+{
+	"name": "AdventureInTsakonia_App",
+	"description": "AdventureInTsakonia app",
+	"version": "1.0.2",
+	"homepage": "https://github.com/Zoomicon/AdventureInTsakonia_App",
+	"mainsrc": ".",
+	"projects": [
+		"AdventureInTsakonia_App.dproj"
+	],
+	"dependencies": {
+		"github.com/zoomicon/readcom.core.delphi": ">=15.0.0"
+	}
+}

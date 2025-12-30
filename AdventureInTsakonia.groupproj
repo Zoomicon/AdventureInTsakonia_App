@@ -1,0 +1,76 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{44034F99-A955-412B-8EE6-AFB9DF488675}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="App\AdventureInTsakonia_App.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AdventureInTsakonia_App">
+        <MSBuild Projects="App\AdventureInTsakonia_App.dproj"/>
+    </Target>
+    <Target Name="AdventureInTsakonia_App:Clean">
+        <MSBuild Projects="App\AdventureInTsakonia_App.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AdventureInTsakonia_App:Make">
+        <MSBuild Projects="App\AdventureInTsakonia_App.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AdventureInTsakonia_App"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AdventureInTsakonia_App:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AdventureInTsakonia_App:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Android'">
+        <BuildGroupProject Include="App\AdventureInTsakonia_App.dproj">
+            <ProjectGuid>{B62CC64D-8B42-4BF6-98BF-575769C693DD}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android;Android64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='macOS'">
+        <BuildGroupProject Include="App\AdventureInTsakonia_App.dproj">
+            <ProjectGuid>{B62CC64D-8B42-4BF6-98BF-575769C693DD}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>OSX64;OSXARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='All Platforms'">
+        <BuildGroupProject Include="App\AdventureInTsakonia_App.dproj">
+            <ProjectGuid>{B62CC64D-8B42-4BF6-98BF-575769C693DD}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Android;Android64;iOSDevice64;iOSSimARM64;OSX64;OSXARM64;Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='iOS'">
+        <BuildGroupProject Include="App\AdventureInTsakonia_App.dproj">
+            <ProjectGuid>{B62CC64D-8B42-4BF6-98BF-575769C693DD}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>iOSDevice64;iOSSimARM64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+    <ItemGroup Condition="'$(BuildGroup)'=='Windows'">
+        <BuildGroupProject Include="App\AdventureInTsakonia_App.dproj">
+            <ProjectGuid>{B62CC64D-8B42-4BF6-98BF-575769C693DD}</ProjectGuid>
+            <Configurations>Release</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>
