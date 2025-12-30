@@ -8,6 +8,6 @@
 		"AdventureInTsakonia_App.dproj"
 	],
 	"dependencies": {
-		"github.com/zoomicon/readcom.core.delphi": ">=15.0.0"
+		"github.com/zoomicon/readcom.core.delphi": ">=16.0.0"
 	}
 }
