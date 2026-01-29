@@ -6,19 +6,10 @@
     <PropertyGroup>
         <DeviceId Condition="'$(Platform)'=='Android'"/>
         <DeviceId Condition="'$(Platform)'=='Android64'"/>
-        <DeviceId Condition="'$(Platform)'=='iOSDevice64'">00008030-001E58CE0A52202E</DeviceId>
-        <DeviceId Condition="'$(Platform)'=='iOSSimARM64'">1A87FFF4-493C-44B8-A3D7-4954FB18BBC8</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSSimARM64'"/>
     </PropertyGroup>
     <ItemGroup Condition="'$(Platform)'=='OSX64'">
-        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\AppIcon.icns" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.icns</RemoteName>
-            <DeployClass>ProjectOSXResource</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="Default.readcom" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\StartUp\</RemoteDir>
             <RemoteName>Default.readcom</RemoteName>
@@ -27,16 +18,6 @@
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="OSX64\Release\AdventureInTsakonia_App" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\Contents\MacOS\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
         </DeployFile>
         <DeployFile Include="OSX64\Debug\AdventureInTsakonia_App" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\Contents\MacOS\</RemoteDir>
@@ -48,6 +29,15 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
+        <DeployFile Include="OSX64\Release\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
+            <DeployClass>ProjectOSXEntitlements</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="DEPENDENCIES.md" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\StartUp\</RemoteDir>
             <RemoteName>DEPENDENCIES.md</RemoteName>
@@ -57,10 +47,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="OSX64\Release\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\Contents\</RemoteDir>
-            <RemoteName>Info.plist</RemoteName>
-            <DeployClass>ProjectOSXInfoPList</DeployClass>
+        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\AppIcon.icns" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.icns</RemoteName>
+            <DeployClass>ProjectOSXResource</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -102,10 +92,20 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="OSX64\Release\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
-            <DeployClass>ProjectOSXEntitlements</DeployClass>
+        <DeployFile Include="OSX64\Release\AdventureInTsakonia_App" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="OSX64\Release\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\Contents\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <DeployClass>ProjectOSXInfoPList</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -123,20 +123,20 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_150.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
-            <RemoteName>Logo150x150.png</RemoteName>
-            <DeployClass>UWP_DelphiLogo150</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="DEPENDENCIES.md" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
             <RemoteName>DEPENDENCIES.md</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_150.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
+            <RemoteName>Logo150x150.png</RemoteName>
+            <DeployClass>UWP_DelphiLogo150</DeployClass>
+            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -169,7 +169,7 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_44.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_44.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
             <RemoteName>Logo44x44.png</RemoteName>
             <DeployClass>UWP_DelphiLogo44</DeployClass>
@@ -177,16 +177,6 @@
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="Win32\Release\AdventureInTsakonia_App.exe" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.exe</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
         </DeployFile>
         <DeployFile Include="Win32\Debug\AppxManifest.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
@@ -207,11 +197,30 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
+        <DeployFile Include="Win32\Release\AdventureInTsakonia_App.exe" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.exe</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_150.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
             <RemoteName>Logo150x150.png</RemoteName>
             <DeployClass>UWP_DelphiLogo150</DeployClass>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Default.readcom" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
+            <RemoteName>Default.readcom</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -226,15 +235,6 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="Default.readcom" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
-            <RemoteName>Default.readcom</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\sk4d.dll" Condition="'$(Config)'=='Release' And '$(SKIADIR)'==''">
             <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
             <RemoteName>sk4d.dll</RemoteName>
@@ -245,7 +245,7 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_44.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_44.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
             <RemoteName>Logo44x44.png</RemoteName>
             <DeployClass>UWP_DelphiLogo44</DeployClass>
@@ -256,10 +256,55 @@
         </DeployFile>
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='OSXARM64'">
+        <DeployFile Include="OSXARM64\Debug\AdventureInTsakonia_App.dSYM" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App</RemoteName>
+            <DeployClass>ProjectOSXDebug</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="DEPENDENCIES.md" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>DEPENDENCIES.md</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="OSXARM64\Release\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
             <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
             <DeployClass>ProjectOSXEntitlements</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Default.readcom" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\StartUp\</RemoteDir>
+            <RemoteName>Default.readcom</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="OSXARM64\Debug\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
+            <DeployClass>ProjectOSXEntitlements</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(ProjectName).Artwork\macOS\AppIcon.icns" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.icns</RemoteName>
+            <DeployClass>ProjectOSXResource</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -275,53 +320,7 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="DEPENDENCIES.md" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\StartUp\</RemoteDir>
-            <RemoteName>DEPENDENCIES.md</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="Default.readcom" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\StartUp\</RemoteDir>
-            <RemoteName>Default.readcom</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\AppIcon.icns" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.icns</RemoteName>
-            <DeployClass>ProjectOSXResource</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="OSXARM64\Debug\AdventureInTsakonia_App" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\Contents\MacOS\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
-        <DeployFile Include="OSXARM64\Debug\AdventureInTsakonia_App.dSYM" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App</RemoteName>
-            <DeployClass>ProjectOSXDebug</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="OSXARM64\Debug\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="OSXARM64\Release\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App.app\Contents\</RemoteDir>
             <RemoteName>Info.plist</RemoteName>
             <DeployClass>ProjectOSXInfoPList</DeployClass>
@@ -339,6 +338,25 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="OSXARM64\Debug\AdventureInTsakonia_App" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="OSXARM64\Debug\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\Contents\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <DeployClass>ProjectOSXInfoPList</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="Default.readcom" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\StartUp\</RemoteDir>
             <RemoteName>Default.readcom</RemoteName>
@@ -352,24 +370,6 @@
             <RemoteDir>AdventureInTsakonia_App.app\Contents\Resources\</RemoteDir>
             <RemoteName>AdventureInTsakonia_App.icns</RemoteName>
             <DeployClass>ProjectOSXResource</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="OSXARM64\Debug\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
-            <DeployClass>ProjectOSXEntitlements</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="OSXARM64\Release\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\Contents\</RemoteDir>
-            <RemoteName>Info.plist</RemoteName>
-            <DeployClass>ProjectOSXInfoPList</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -530,16 +530,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Android\Release\libAdventureInTsakonia_App.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libAdventureInTsakonia_App.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="READCOM_App\LaunchGen\Android_SplashImage426.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
@@ -584,16 +574,6 @@
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="Android\Debug\libAdventureInTsakonia_App.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libAdventureInTsakonia_App.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
         </DeployFile>
         <DeployFile Include="READCOM_App\LaunchGen\Android_LauncherIcon96.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App\res\drawable-xhdpi\</RemoteDir>
@@ -793,6 +773,16 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android\Release\libAdventureInTsakonia_App.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libAdventureInTsakonia_App.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="READCOM_App\LaunchGen\Android_SplashImage426.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
@@ -810,6 +800,16 @@
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\libAdventureInTsakonia_App.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libAdventureInTsakonia_App.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
         </DeployFile>
         <DeployFile Include="READCOM_App\LaunchGen\Android_SplashImage960.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App\res\drawable-xlarge\</RemoteDir>
@@ -849,20 +849,29 @@
         </DeployFile>
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Win64'">
-        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_44.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
-            <RemoteName>Logo44x44.png</RemoteName>
-            <DeployClass>UWP_DelphiLogo44</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="Default.readcom" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
             <RemoteName>Default.readcom</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_150.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
+            <RemoteName>Logo150x150.png</RemoteName>
+            <DeployClass>UWP_DelphiLogo150</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_44.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
+            <RemoteName>Logo44x44.png</RemoteName>
+            <DeployClass>UWP_DelphiLogo44</DeployClass>
+            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -887,23 +896,15 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_150.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
-            <RemoteName>Logo150x150.png</RemoteName>
-            <DeployClass>UWP_DelphiLogo150</DeployClass>
-            <Operation>1</Operation>
+        <DeployFile Include="Win64\Debug\AdventureInTsakonia_App.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.exe</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_44.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
-            <RemoteName>Logo44x44.png</RemoteName>
-            <DeployClass>UWP_DelphiLogo44</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
+            <Required>True</Required>
         </DeployFile>
         <DeployFile Include="Win64\Release\AppxManifest.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
@@ -923,15 +924,23 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="Win64\Debug\AdventureInTsakonia_App.exe" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.exe</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>0</Operation>
+        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_150.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
+            <RemoteName>Logo150x150.png</RemoteName>
+            <DeployClass>UWP_DelphiLogo150</DeployClass>
+            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
-            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_44.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
+            <RemoteName>Logo44x44.png</RemoteName>
+            <DeployClass>UWP_DelphiLogo44</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="Win64\Release\AdventureInTsakonia_App.exe" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App\</RemoteDir>
@@ -962,15 +971,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
             <Required>True</Required>
-        </DeployFile>
-        <DeployFile Include="AdventureInTsakonia_App.Artwork\Windows\Uwp_150.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App\Assets\</RemoteDir>
-            <RemoteName>Logo150x150.png</RemoteName>
-            <DeployClass>UWP_DelphiLogo150</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
         </DeployFile>
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Android64'">
@@ -1082,6 +1082,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android\Release\libAdventureInTsakonia_App.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libAdventureInTsakonia_App.so</RemoteName>
+            <DeployClass>ProjectOutput_Android32</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="READCOM_App\LaunchGen\Android_LauncherIcon36.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
@@ -1117,16 +1126,6 @@
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="Android64\Release\libAdventureInTsakonia_App.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App\library\lib\arm64-v8a\</RemoteDir>
-            <RemoteName>libAdventureInTsakonia_App.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
         </DeployFile>
         <DeployFile Include="DEPENDENCIES.md" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App\assets\internal\</RemoteDir>
@@ -1299,6 +1298,16 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="Android64\Release\libAdventureInTsakonia_App.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App\library\lib\arm64-v8a\</RemoteDir>
+            <RemoteName>libAdventureInTsakonia_App.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="Android64\Debug\colors.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App\res\values\</RemoteDir>
             <RemoteName>colors.xml</RemoteName>
@@ -1348,15 +1357,6 @@
             <RemoteDir>AdventureInTsakonia_App\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="Android\Release\libAdventureInTsakonia_App.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libAdventureInTsakonia_App.so</RemoteName>
-            <DeployClass>ProjectOutput_Android32</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -1464,15 +1464,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="iOSDevice64\Release\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
-            <DeployClass>ProjectiOSEntitlements</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(ProjectName).Artwork\iOS\iPad\FM_LaunchImageDark_2x.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset\</RemoteDir>
             <RemoteName>FM_LaunchScreenImage_iPadDark@2x.png</RemoteName>
@@ -1482,11 +1473,11 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="iOSDevice64\Debug\AdventureInTsakonia_App.launchscreen" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.launchscreen</RemoteName>
-            <DeployClass>ProjectiOSLaunchScreen</DeployClass>
-            <Operation>64</Operation>
+        <DeployFile Include="iOSDevice64\Release\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <DeployClass>ProjectiOSInfoPList</DeployClass>
+            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -1509,30 +1500,11 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="iOSDevice64\Release\AdventureInTsakonia_App" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="$(ProjectName).Artwork\iOS\iPhone\FM_LaunchImage_2x.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset\</RemoteDir>
             <RemoteName>FM_LaunchScreenImage_iPhone@2x.png</RemoteName>
             <DeployClass>iPhone_Launch2x</DeployClass>
             <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="iOSDevice64\Release\AdventureInTsakonia_App.launchscreen" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.launchscreen</RemoteName>
-            <DeployClass>ProjectiOSLaunchScreen</DeployClass>
-            <Operation>64</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -1573,11 +1545,29 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="iOSDevice64\Debug\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
+            <DeployClass>ProjectiOSEntitlements</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(ProjectName).Artwork\iOS\iPhone\FM_LaunchImageDark_2x.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset\</RemoteDir>
             <RemoteName>FM_LaunchScreenImage_iPhoneDark@2x.png</RemoteName>
             <DeployClass>iPhone_LaunchDark2x</DeployClass>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="iOSDevice64\Debug\AdventureInTsakonia_App.launchscreen" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.launchscreen</RemoteName>
+            <DeployClass>ProjectiOSLaunchScreen</DeployClass>
+            <Operation>64</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -1627,10 +1617,20 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="iOSDevice64\Release\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="iOSDevice64\Release\AdventureInTsakonia_App" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
-            <RemoteName>Info.plist</RemoteName>
-            <DeployClass>ProjectiOSInfoPList</DeployClass>
+            <RemoteName>AdventureInTsakonia_App</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="iOSDevice64\Release\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
+            <DeployClass>ProjectiOSEntitlements</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -1726,6 +1726,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="iOSDevice64\Release\AdventureInTsakonia_App.launchscreen" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.launchscreen</RemoteName>
+            <DeployClass>ProjectiOSLaunchScreen</DeployClass>
+            <Operation>64</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="Default.readcom" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\StartUp\Documents\</RemoteDir>
             <RemoteName>Default.readcom</RemoteName>
@@ -1744,15 +1753,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="iOSDevice64\Debug\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
-            <DeployClass>ProjectiOSEntitlements</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(ProjectName).Artwork\iOS\iPad\FM_SettingIcon_58x58.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset\</RemoteDir>
             <RemoteName>FM_SettingIcon_58x58.png</RemoteName>
@@ -1766,15 +1766,6 @@
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset\</RemoteDir>
             <RemoteName>FM_LaunchScreenImage_iPad@2x.png</RemoteName>
             <DeployClass>iPad_Launch2x</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="iOSDevice64\Debug\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
-            <RemoteName>Info.plist</RemoteName>
-            <DeployClass>ProjectiOSInfoPList</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -1843,10 +1834,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="iOSDevice64\Debug\AdventureInTsakonia_App.dSYM" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App</RemoteName>
-            <DeployClass>ProjectiOSDeviceDebug</DeployClass>
+        <DeployFile Include="iOSDevice64\Debug\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <DeployClass>ProjectiOSInfoPList</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -1860,16 +1851,6 @@
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="iOSDevice64\Debug\AdventureInTsakonia_App" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
         </DeployFile>
         <DeployFile Include="$(ProjectName).Artwork\iOS\iPhone\FM_ApplicationIcon_180x180.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset\</RemoteDir>
@@ -1925,6 +1906,16 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="iOSDevice64\Debug\AdventureInTsakonia_App" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="$(ProjectName).Artwork\iOS\iPhone\FM_SpotlightSearchIcon_120x120.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset\</RemoteDir>
             <RemoteName>FM_SpotlightSearchIcon_120x120.png</RemoteName>
@@ -1936,15 +1927,6 @@
         </DeployFile>
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='iOSSimARM64'">
-        <DeployFile Include="iOSSimARM64\Release\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
-            <DeployClass>ProjectiOSEntitlements</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="READCOM_App\LaunchGen\iPhone_Setting87.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset\</RemoteDir>
             <RemoteName>iPhone_Setting87.png</RemoteName>
@@ -1999,16 +1981,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="iOSSimARM64\Debug\READCOM_App.launchscreen" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\</RemoteDir>
-            <RemoteName>READCOM_App.launchscreen</RemoteName>
-            <DeployClass>ProjectiOSLaunchScreen</DeployClass>
-            <Operation>64</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="iOSSimARM64\Release\AdventureInTsakonia_App" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="iOSSimARM64\Debug\AdventureInTsakonia_App" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
             <RemoteName>AdventureInTsakonia_App</RemoteName>
             <DeployClass>ProjectOutput</DeployClass>
@@ -2017,6 +1990,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
             <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="iOSSimARM64\Debug\READCOM_App.launchscreen" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\</RemoteDir>
+            <RemoteName>READCOM_App.launchscreen</RemoteName>
+            <DeployClass>ProjectiOSLaunchScreen</DeployClass>
+            <Operation>64</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="READCOM_App\LaunchGen\iPhone_LaunchDark2x.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset\</RemoteDir>
@@ -2072,6 +2054,16 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="iOSSimARM64\Release\AdventureInTsakonia_App" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
         <DeployFile Include="READCOM_App\LaunchGen\iPad_Launch2x.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\LaunchScreenImage.imageset\</RemoteDir>
             <RemoteName>FM_LaunchScreenImage_iPad@2x.png</RemoteName>
@@ -2112,6 +2104,15 @@
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset\</RemoteDir>
             <RemoteName>iPad_AppIcon152.png</RemoteName>
             <DeployClass>iPad_AppIcon152</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="iOSSimARM64\Release\AdventureInTsakonia_App.entitlements" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.entitlements</RemoteName>
+            <DeployClass>ProjectiOSEntitlements</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -2171,16 +2172,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="iOSSimARM64\Debug\AdventureInTsakonia_App" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
-        </DeployFile>
         <DeployFile Include="$(ProjectName).Artwork\iOS\iPhone\FM_SpotlightSearchIcon_80x80.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset\</RemoteDir>
             <RemoteName>FM_SpotlightSearchIcon_80x80.png</RemoteName>
@@ -2208,19 +2199,19 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="iOSSimARM64\Release\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
-            <RemoteName>Info.plist</RemoteName>
-            <DeployClass>ProjectiOSInfoPList</DeployClass>
+        <DeployFile Include="READCOM_App\LaunchGen\iOS_AppStore1024.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset\</RemoteDir>
+            <RemoteName>iOS_AppStore1024.png</RemoteName>
+            <DeployClass>iOS_AppStore1024</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="READCOM_App\LaunchGen\iOS_AppStore1024.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\Assets\AppIcon.appiconset\</RemoteDir>
-            <RemoteName>iOS_AppStore1024.png</RemoteName>
-            <DeployClass>iOS_AppStore1024</DeployClass>
+        <DeployFile Include="iOSSimARM64\Release\AdventureInTsakonia_App.info.plist" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\</RemoteDir>
+            <RemoteName>Info.plist</RemoteName>
+            <DeployClass>ProjectiOSInfoPList</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -2258,6 +2249,15 @@
             <RemoteName>FM_SettingIcon_87x87.png</RemoteName>
             <DeployClass>iPhone_Setting87</DeployClass>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="iOSSimARM64\Release\AdventureInTsakonia_App.launchscreen" Condition="'$(Config)'=='Release'">
+            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\</RemoteDir>
+            <RemoteName>AdventureInTsakonia_App.launchscreen</RemoteName>
+            <DeployClass>ProjectiOSLaunchScreen</DeployClass>
+            <Operation>64</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -2339,15 +2339,6 @@
             <RemoteName>FM_ApplicationIcon_152x152.png</RemoteName>
             <DeployClass>iPad_AppIcon152</DeployClass>
             <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="iOSSimARM64\Release\AdventureInTsakonia_App.launchscreen" Condition="'$(Config)'=='Release'">
-            <RemoteDir>AdventureInTsakonia_App.app\..\$(PROJECTNAME).launchscreen\</RemoteDir>
-            <RemoteName>AdventureInTsakonia_App.launchscreen</RemoteName>
-            <DeployClass>ProjectiOSLaunchScreen</DeployClass>
-            <Operation>64</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
