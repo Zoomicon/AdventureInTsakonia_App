@@ -14,11 +14,11 @@ program AdventureInTsakonia_App;
 uses
   System.StartUpCopy,
   READCOM.App.Main,
-  Zoomicon.Media.FMX.ModalFrame in 'modules\zoomicon.media.fmx.delphi\Source\Zoomicon.Media.FMX.ModalFrame.pas' {ModalFrame: TFrame},
-  READCOM.Resources.Icons in 'modules\readcom.core.delphi\Source\Resources\READCOM.Resources.Icons.pas' {Icons: TDataModule},
   AdventureInTsakonia.Views.Dialogs.About in 'Views\Dialogs\AdventureInTsakonia.Views.Dialogs.About.pas' {AboutFrame: TFrame},
   AdventureInTsakonia.App.Messages in 'AdventureInTsakonia.App.Messages.pas',
-  AdventureInTsakonia.App.Events in 'AdventureInTsakonia.App.Events.pas';
+  AdventureInTsakonia.App.Events in 'AdventureInTsakonia.App.Events.pas',
+  READCOM.Resources.Icons in 'modules\github_com_zoomicon_readcom_core_delphi\Source\Resources\READCOM.Resources.Icons.pas' {Icons: TDataModule},
+  Zoomicon.Media.FMX.ModalFrame in 'modules\github_com_zoomicon_zoomicon_media_fmx_delphi\Source\Zoomicon.Media.FMX.ModalFrame.pas' {ModalFrame: TFrame};
 
 {$endregion}
 
